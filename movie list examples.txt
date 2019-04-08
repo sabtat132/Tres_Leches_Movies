@@ -1,0 +1,7 @@
+~~~~~~~~~~~
+movie (5) - list:
+-Shazam
+-Aladdin
+-John Wick: Chapter 3
+-It: Chapter Two
+-Alita: Battle Angel

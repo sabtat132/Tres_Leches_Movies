@@ -1,0 +1,229 @@
+<html lang="en">
+<title>The Point Theater</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(10, 186, 22);
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(255, 255, 50);
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(10, 186, 22);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: rgb(255, 255, 50)}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.mySlides {display:none;}
+.button {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 12px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+</style>
+</head>
+<body>
+
+  <ul>
+    <li><a href="homepage.html">Home</a></li>
+    <li><a href="movieTrailer.html">Current Movie Trailers</a></li>
+    <li><a href="moviePrice.html">Movie Prices</a></li>
+    <li><a href="about.html">About Our Theater</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    </li>
+  </ul>
+
+
+
+<footer>
+  <br>
+  <br>
+  <br>
+<center>
+ <p>All movies tickets are starting at $8.99</p>
+</footer>
+</center>
+<h2 class="w3-center">Point Movie tickets</h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="johnwick.jpg" width="350" height"500">
+  <img class="mySlides" src="alita.jpg" width="350" height"500">
+  <img class="mySlides" src="aladdin.jpg" width="350" height"500">
+  <img class="mySlides" src="shazam.jpg" width="350" height"500">
+  <img class="mySlides" src="it.jpg" width="350" height"500">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+<br>
+<br>
+ <center>
+<!-- <button id="movieprice" class="button" onclick"calcPrice()">Click Here</button> -->
+
+<p id="tmp"></p>
+</center>
+
+<Center>
+  <button class="button" id="constructor" onclick="calcPrice()"></button>
+  <br>
+  <br>
+  <button class="button" id="constructor2" onclick="calcPrice()"></button>
+  <br>
+  <br>
+  <button class="button" id="constructor3" onclick="calcPrice()"></button>
+  <br>
+  <br>
+  <button class="button" id="constructor4" onclick="calcPrice()"></button>
+  <br>
+  <br>
+  <button class="button" id="constructor5" onclick="calcPrice()"></button>
+</center>
+
+<script>
+
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+
+ function calcPrice() {
+   var price;
+   var m = confirm("do you want to purchase the tickets?");
+   if (m == true) {
+     price = "thank you for purchasing point Theater tickets";
+   } else {
+     price = "purchase has been cancelled";
+   }
+   alert(price);
+}
+
+function Movies(title, price) {
+  this.title = title;
+  this.price = price;
+}
+
+var horror = new Movies("IT chapter two",8.99);
+var scifi = new Movies("Alita: battle angel",8.99);
+var action = new Movies("John Wick Chapter 3",8.99);
+var family = new Movies("Aladdin",8.99);
+var adventure = new Movies("Shazam",8.99);
+
+document.getElementById("constructor").innerHTML = action.title;
+document.getElementById("constructor2").innerHTML = scifi.title;
+document.getElementById("constructor3").innerHTML = family.title;
+document.getElementById("constructor4").innerHTML = adventure.title;
+document.getElementById("constructor5").innerHTML = horror.title;
+</script>
+</body>
+</script>
+</body>
+</html>
